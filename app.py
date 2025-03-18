@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request  # Import 'request' here
-from vercel_python import VercelPython
 
 app = Flask(__name__)
 

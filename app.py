@@ -24,7 +24,7 @@ def secret():
         return "Congrats ! You have done it, Password='codeOfLies'"
     else:
         return "Access Denied", 403
-vercel_app = VercelPython(app)
+
 # Start the server
 if __name__ == '__main__':
     app.run()

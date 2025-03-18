@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="glitch-container">
+        <h1 class="glitch" data-text="ACCESS DENIED">ACCESS DENIED</h1>
+        <p class="subtext">System compromised. Initiating self-destruct sequence...</p>
+    </div>
+
+    <div class="popup" id="popup">
+        <p>WARNING: Files are being deleted!</p>
+        <button onclick="closePopup()">Dismiss</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 

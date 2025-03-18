@@ -7,10 +7,15 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/binary')
+def binarycode():
+    return render_template('binary.html')
+
 # Hidden endpoint 1
 @app.route('/flag')
 def flag():
     return "Hidden endpoint is not here"
+
 
 # Hidden endpoint 2 (fake endpoint)
 @app.route('/fakeflag')

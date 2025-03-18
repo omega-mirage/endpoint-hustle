@@ -28,4 +28,4 @@ def secret():
 vercel_app = VercelPython(app)
 # Start the server
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run()

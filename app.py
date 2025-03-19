@@ -21,7 +21,7 @@ def binary_code_three():
     
 @app.route('/home')
 def binary_code_four():
-    return render_template('fourn.html')
+    return render_template('four.html')
 
 # Hidden endpoint 1
 @app.route('/flag')

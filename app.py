@@ -7,10 +7,12 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/onezerolang')
+def binarycode():
+    return render_template('one.html')
 @app.route('/binary')
 def binarycode():
-    return render_template('binary.html')
-
+    return render_template('two.html')
 # Hidden endpoint 1
 @app.route('/flag')
 def flag():

@@ -16,7 +16,7 @@ def binarycode():
 
 @app.route('/code')
 def binarycode():
-    return render_template('two.html')
+    return render_template('three.html')
     
 # Hidden endpoint 1
 @app.route('/flag')

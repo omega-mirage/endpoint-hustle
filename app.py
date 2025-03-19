@@ -18,6 +18,10 @@ def binary_code_two():
 @app.route('/code')
 def binary_code_three():
     return render_template('three.html')
+    
+@app.route('/home')
+def binary_code_three():
+    return render_template('fourn.html')
 
 # Hidden endpoint 1
 @app.route('/flag')

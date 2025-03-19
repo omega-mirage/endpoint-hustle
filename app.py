@@ -20,7 +20,7 @@ def binary_code_three():
     return render_template('three.html')
     
 @app.route('/home')
-def binary_code_three():
+def binary_code_four():
     return render_template('fourn.html')
 
 # Hidden endpoint 1

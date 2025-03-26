@@ -9,7 +9,7 @@ function showPopup() {
 
 // Randomly trigger popups
 setInterval(() => {
-    if (Math.random() < 0.3) { // 30% chance to show popup
+    if (Math.random() < 0.5) { // 30% chance to show popup
         showPopup();
     }
 }, 5000);

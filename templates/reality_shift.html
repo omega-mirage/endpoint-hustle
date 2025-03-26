@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REALITY-SHIFT</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            position: relative;
+            min-height: 300vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-top: 50vh;
+        }
+        .glitch {
+            font-size: 3em;
+            font-weight: bold;
+            position: relative;
+            animation: glitch 1.5s infinite;
+            z-index: 2;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 5px 5px red; }
+            50% { text-shadow: -5px -5px cyan; }
+            100% { text-shadow: 5px 5px red; }
+        }
+        .message {
+            font-size: 2em;
+            font-weight: bold;
+            color: black;
+            background: white;
+            padding: 20px;
+            margin-top: 100vh;
+            transform: rotate(-5deg);
+            animation: fadeIn 5s ease-in-out;
+            z-index: 2;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glitch">Welcome to the Reality Shift</div>
+        <div class="message">Sorry, this is the wrong path.</div>
+    </div>
+</body>
+</html>

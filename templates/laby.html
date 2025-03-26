@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABYRINTH-PATH</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #0d0d0d, #1a1a1a, #262626);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            position: relative;
+            padding: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            animation: glow 2s infinite alternate;
+        }
+        p {
+            font-size: 1.4em;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #fff, 0 0 10px #8b0000, 0 0 20px #5a0000; }
+            100% { text-shadow: 0 0 10px #fff, 0 0 20px #8b0000, 0 0 30px #5a0000; }
+        }
+        .illusion {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.8));
+            animation: spin 4s linear infinite;
+            opacity: 0.5;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        .illusion:nth-child(1) { top: 10%; left: 30%; animation-duration: 5s; }
+        .illusion:nth-child(2) { top: 40%; left: 70%; animation-duration: 6s; }
+        .illusion:nth-child(3) { top: 70%; left: 20%; animation-duration: 7s; }
+        .illusion:nth-child(4) { top: 50%; left: 50%; animation-duration: 4s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trapped in the Labyrinth?</h1>
+        <p>You are on the wrong path. Try again, but beware—the maze shifts when you're not looking.</p>
+    </div>
+    <div class="illusion"></div>
+    <div class="illusion"></div>
+    <div class="illusion"></div>
+    <div class="illusion"></div>
+</body>
+</html>
+    

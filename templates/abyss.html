@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABYSS-GATE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #000000, #1a0a1f, #2e003e);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            position: relative;
+            padding: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            animation: glow 2s infinite alternate;
+        }
+        p {
+            font-size: 1.4em;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #8b008b; }
+            100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #8b008b; }
+        }
+        .illusion {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,0,255,0.8));
+            animation: distort 4s infinite alternate ease-in-out;
+            opacity: 0.6;
+            border-radius: 50%;
+        }
+        @keyframes distort {
+            0% { transform: scale(1) rotate(0deg); border-radius: 50%; }
+            50% { transform: scale(1.4) rotate(180deg); border-radius: 30%; }
+            100% { transform: scale(1) rotate(360deg); border-radius: 50%; }
+        }
+        .illusion:nth-child(1) { top: 15%; left: 25%; animation-duration: 6s; }
+        .illusion:nth-child(2) { top: 50%; left: 80%; animation-duration: 7s; }
+        .illusion:nth-child(3) { top: 70%; left: 15%; animation-duration: 5s; }
+        .illusion:nth-child(4) { top: 40%; left: 50%; animation-duration: 4s; }
+        .illusion:nth-child(5) { top: 20%; left: 60%; animation-duration: 6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Abyss Stares Back...</h1>
+        <p>You are on the wrong path. Turn back before the void consumes you.</p>
+    </div>
+    <div class="illusion"></div>
+    <div class="illusion"></div>
+    <div class="illusion"></div>
+    <div class="illusion"></div>
+    <div class="illusion"></div>
+</body>
+</html>

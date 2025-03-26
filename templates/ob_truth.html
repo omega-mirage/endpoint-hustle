@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBLIVION-TRUTH</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #000000, #1a0e1a, #3b003b);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            position: relative;
+            padding: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 60px rgba(200, 0, 200, 0.8);
+            border-radius: 20px;
+            animation: oblivionShift 3s infinite alternate ease-in-out;
+        }
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            animation: distortion 2s infinite alternate;
+        }
+        p {
+            font-size: 1.6em;
+        }
+        @keyframes oblivionShift {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.05) rotate(1deg); }
+            100% { transform: scale(1) rotate(-1deg); }
+        }
+        @keyframes distortion {
+            0% { text-shadow: 4px 4px 0px #9400d3, -4px -4px 0px #ff1493; }
+            50% { text-shadow: -4px -4px 0px #9400d3, 4px 4px 0px #ff1493; }
+            100% { text-shadow: 4px 4px 0px #9400d3, -4px -4px 0px #ff1493; }
+        }
+        .void-shape {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: voidFlow 7s infinite alternate ease-in-out;
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+        }
+        @keyframes voidFlow {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.4); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        .void-shape:nth-child(1) { top: 5%; left: 25%; animation-duration: 8s; }
+        .void-shape:nth-child(2) { top: 65%; left: 80%; animation-duration: 6s; }
+        .void-shape:nth-child(3) { top: 85%; left: 20%; animation-duration: 7s; }
+        .void-shape:nth-child(4) { top: 35%; left: 55%; animation-duration: 5s; }
+        .void-shape:nth-child(5) { top: 10%; left: 75%; animation-duration: 6.5s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Void Whispers Forgotten Truths...</h1>
+        <p>You have stepped into oblivion. This path was never meant to be found.</p>
+    </div>
+    <div class="void-shape"></div>
+    <div class="void-shape"></div>
+    <div class="void-shape"></div>
+    <div class="void-shape"></div>
+    <div class="void-shape"></div>
+</body>
+</html>

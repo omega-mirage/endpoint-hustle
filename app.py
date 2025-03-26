@@ -45,22 +45,22 @@ def echo_silence():
 #endpoint 3
 @app.route('/VEIL-WALKER')
 def veil_walker():
-    return "VEIL-WALKER"
+    return render_template('veil_walker.html')
 
 #endpoint 4
 @app.route('/ETHEREAL-DREAM')
 def ethereal_dream():
-    return "ETHEREAL-DREAM"
+    return render_template('etherel_dream.html')
 
 #endpoint 5
 @app.route('/LABYRINTH-PATH')
 def labrinth_path():
-    return "LABYRINTH-PATH"
+    return render_template('laby.html')
 
 #endpoint 6
 @app.route('/ABYSS-GATE')
 def abyss_gate():
-    return "ABYSS-GATE"
+    return render_template('abyss.html')
 
 #endpoint 7
 @app.route('/REVELATION')
@@ -70,22 +70,22 @@ def revelation():
 #endpoint 8
 @app.route('/THRESHOLD-CODE')
 def threshold_code():
-    return "THRESHOLD-CODE"
+    return render_template('threshold.html')
 
 #endpoint 9
 @app.route('/ILLUSION-VEIL')
 def illusion_veil():
-    return "ILLUSION-VEIL"
+    return render_template('illusion_veil.html')
 
 #endpoint 10
 @app.route('/OBLIVION-TRUTH')
 def oblivion_truth():
-    return "OBLIVION-TRUTH"
+    return render_template('ob_truth.html')
 
 #endpoint 11
 @app.route('/NIGHTFALL-ECHO')
 def nightfall_echo():
-    return "NIGHTFALL-ECHO"
+    return render_template('night_echo.html')
 
 # Hidden endpoint 3 (requires a specific header)
 @app.route('/secret')

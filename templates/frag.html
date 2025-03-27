@@ -44,49 +44,17 @@
             line-height: 1.6;
             margin-bottom: 20px;
         }
-        .sponsors {
-            background: rgba(0, 0, 0, 0.85);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
-            width: 60%;
-            max-width: 500px;
-            margin-bottom: 50px;
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffcc00;
+            opacity: 0.7;
+            animation: confettiFall linear infinite;
         }
-        .sponsors h2 {
-            font-size: 1.6em;
-            color: #c084fc;
-            margin-bottom: 10px;
-        }
-        @keyframes glow {
-            0% { box-shadow: 0 0 20px rgba(138, 43, 226, 0.6); }
-            100% { box-shadow: 0 0 50px rgba(138, 43, 226, 1); }
-        }
-        @keyframes flicker {
-            0% { opacity: 1; text-shadow: 3px 3px 10px #9b59b6; }
-            50% { opacity: 0.7; text-shadow: 5px 5px 15px #8e44ad; }
-            100% { opacity: 1; text-shadow: 3px 3px 10px #9b59b6; }
-        }
-        .marquee {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            color: #ffcc00;
-            font-size: 1.2em;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        .marquee div {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 15s linear infinite;
-        }
-        @keyframes marquee {
-            from { transform: translateX(0); }
-            to { transform: translateX(-100%); }
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(720deg); }
         }
     </style>
 </head>
@@ -102,12 +70,20 @@ Ah, but this is a world of illusion, my friend. The digital veil may have lifted
 Think back to where you’ve been before, where knowledge and opportunity come together. You’ve passed their space already, but did you really learn from it? Perhaps the answer lies with an old mate you overlooked.
 
 The flag is real. It’s there, waiting to be found. Go back, search carefully, and take what is rightfully yours.</p>
-<!--     </div>
-    <div class="sponsors">
-        <h2>THANK YOU!</h2>
-        <p>Special Thanks to Our Sponsors:<br>
-        <strong>Learnomate Pvt. Ltd.</strong></p>
-    </div> -->
+    </div>
+    <script>
+        // Generate Confetti Elements
+        for (let i = 0; i < 100; i++) {
+            let confetti = document.createElement("div");
+            confetti.className = "confetti";
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.top = Math.random() * -100 + "vh";
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+            confetti.style.animationDuration = Math.random() * 3 + 2 + "s";
+            confetti.style.animationTimingFunction = "linear";
+            document.body.appendChild(confetti);
+        }
+    </script>
     <div class="marquee">
         <div>Acunetix 12.0 | Code Of Lies | Thanks to our Sponsors: GS, SAP, Edualliance, Learnomate Technologies, Vaunce Gaming Lounge</div>
     </div>

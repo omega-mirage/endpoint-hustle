@@ -11,34 +11,61 @@
             background: #1a001a;
             color: white;
             font-family: 'Poppins', sans-serif;
-            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
+            justify-content: flex-start;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding-top: 50px;
             position: relative;
         }
         .container {
-            position: relative;
-            padding: 40px;
             background: rgba(0, 0, 0, 0.9);
             box-shadow: 0 0 50px rgba(138, 43, 226, 0.8);
             border-radius: 20px;
-            width: 450px;
-            text-align: center;
+            width: 60%;
+            max-width: 600px;
+            padding: 40px;
             animation: glow 3s infinite alternate;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             text-transform: uppercase;
-            color: #9b59b6;
+            color: #c084fc;
             animation: flicker 2s infinite alternate;
+            margin-bottom: 20px;
         }
         p {
-            font-size: 1.3em;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .flag {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffcc00;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .sponsors {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
+            width: 60%;
+            max-width: 500px;
+            margin-bottom: 50px;
+        }
+        .sponsors h2 {
+            font-size: 1.6em;
+            color: #c084fc;
+            margin-bottom: 10px;
         }
         @keyframes glow {
             0% { box-shadow: 0 0 20px rgba(138, 43, 226, 0.6); }
@@ -49,48 +76,6 @@
             50% { opacity: 0.7; text-shadow: 5px 5px 15px #8e44ad; }
             100% { opacity: 1; text-shadow: 3px 3px 10px #9b59b6; }
         }
-        .shape {
-            position: absolute;
-            background: rgba(138, 43, 226, 0.7);
-            animation: moveShapes 5s infinite alternate;
-        }
-        .circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-        .square {
-            width: 50px;
-            height: 50px;
-        }
-        .triangle {
-            width: 0;
-            height: 0;
-            border-left: 25px solid transparent;
-            border-right: 25px solid transparent;
-            border-bottom: 50px solid rgba(138, 43, 226, 0.7);
-        }
-        @keyframes moveShapes {
-            0% { transform: translateY(0) translateX(0) rotate(0deg); }
-            100% { transform: translateY(100px) translateX(100px) rotate(360deg); }
-        }
-        .sponsors {
-            background: rgba(0, 0, 0, 0.85);
-            padding: 20px 40px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
-            text-align: center;
-        }
-        .sponsors h2 {
-            margin: 0;
-            font-size: 1.8em;
-            color: #9b59b6;
-        }
-        .sponsors p {
-            margin: 10px 0 0;
-            font-size: 1.2em;
-        }
-        /* Confetti Animation */
         .confetti {
             position: absolute;
             width: 10px;
@@ -103,42 +88,36 @@
             0% { transform: translateY(0) rotate(0deg); }
             100% { transform: translateY(100vh) rotate(720deg); }
         }
+        .rotating-shape {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: rgba(138, 43, 226, 0.7);
+            animation: rotateShape 5s linear infinite;
+        }
+        @keyframes rotateShape {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Victory Unveiled</h1>
-        <p>Congratulations, Operative.
-
-You’ve shattered the deception, unraveled the lies, and outmaneuvered every illusion thrown your way. Your mind has proven sharper than the false trails, <br>your instincts keener than the misdirections. But tell me—did you really think this was the final challenge?<br>
-
-Ah, but this is a world of illusion, my friend. The digital veil may have lifted, but the last test isn’t behind a screen—it’s right in front of you,<br> in the real world. The final key isn’t a string of code or a hidden file. It’s something you can see, touch, and claim.
-
-Think back to where you’ve been before, where knowledge and opportunity come together. You’ve passed their space already, but did you really learn from it?<br> Perhaps the answer lies with an old mate you overlooked.
-
-The flag is real. It’s there, waiting to be found. <br>Go back, search carefully, and take what is rightfully yours.</p>
-        <p><strong>FLAG: RestoredData</strong></p>
+        <p>Congratulations, Operative. You’ve shattered the deception, unraveled the lies, and outmaneuvered every illusion thrown your way.</p>
+        <p>But tell me—did you really think this was the final challenge? The digital veil may have lifted, but the last test isn’t behind a screen—it’s right in front of you.</p>
+        <p>Think back to where you’ve been before, where knowledge and opportunity come together. You’ve passed their space already, but did you really learn from it?</p>
+<!--         <p class="flag">FLAG: RestoredData</p> -->
     </div>
     <div class="sponsors">
         <h2>THANK YOU!</h2>
         <p>Special Thanks to Our Sponsors:<br>
-        <strong>Learnomate pvt. Ltd.</strong></p>
+        <strong>Learnomate Pvt. Ltd.</strong></p>
     </div>
     <script>
-        const shapes = ['circle', 'square', 'triangle'];
-        for (let i = 0; i < 10; i++) {
-            let shape = document.createElement("div");
-            shape.className = "shape " + shapes[Math.floor(Math.random() * shapes.length)];
-            shape.style.left = Math.random() * 100 + "vw";
-            shape.style.top = Math.random() * 100 + "vh";
-            shape.style.width = Math.random() * 50 + 30 + "px";
-            shape.style.height = shape.style.width;
-            shape.style.animationDuration = Math.random() * 3 + 2 + "s";
-            document.body.appendChild(shape);
-        }
-        
-        // Generate Confetti
-        for (let i = 0; i < 70; i++) {
+        // Generate More Confetti Elements
+        for (let i = 0; i < 150; i++) {
             let confetti = document.createElement("div");
             confetti.className = "confetti";
             confetti.style.left = Math.random() * 100 + "vw";
@@ -146,6 +125,15 @@ The flag is real. It’s there, waiting to be found. <br>Go back, search careful
             confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
             confetti.style.animationDuration = Math.random() * 3 + 2 + "s";
             document.body.appendChild(confetti);
+        }
+        // Generate Rotating Shapes
+        for (let i = 0; i < 20; i++) {
+            let shape = document.createElement("div");
+            shape.className = "rotating-shape";
+            shape.style.left = Math.random() * 100 + "vw";
+            shape.style.top = Math.random() * 100 + "vh";
+            shape.style.animationDuration = Math.random() * 5 + 3 + "s";
+            document.body.appendChild(shape);
         }
     </script>
 </body>

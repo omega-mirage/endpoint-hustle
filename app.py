@@ -42,13 +42,23 @@ def reality_shift():
 def echo_silence():
     return render_template('echo_silence.html')
 
+@app.route('/echo-silence')
+def echo_silence():
+    return render_template('echo_silence.html')
 #endpoint 3
 @app.route('/VEIL-WALKER')
 def veil_walker():
     return render_template('veil_walker.html')
 
+@app.route('/veil-walker')
+def veil_walker():
+    return render_template('veil_walker.html')
 #endpoint 4
 @app.route('/ETHEREAL-DREAM')
+def ethereal_dream():
+    return render_template('etherel_dream.html')
+
+@app.route('/ethereal-dream')
 def ethereal_dream():
     return render_template('etherel_dream.html')
 
@@ -57,8 +67,16 @@ def ethereal_dream():
 def labrinth_path():
     return render_template('laby.html')
 
+@app.route('/labyrinth-path')
+def labrinth_path():
+    return render_template('laby.html')
+
 #endpoint 6
 @app.route('/ABYSS-GATE')
+def abyss_gate():
+    return render_template('abyss.html')
+
+@app.route('/abyss-gate')
 def abyss_gate():
     return render_template('abyss.html')
 
@@ -67,18 +85,34 @@ def abyss_gate():
 def revelation():
     return "THE FLAG MAY BE THIS ENDPOINT ONLY"
 
+@app.route('/revelation')
+def revelation():
+    return "THE FLAG MAY BE THIS ENDPOINT ONLY"
+
 #endpoint 8
 @app.route('/THRESHOLD-CODE')
 def threshold_code():
     return render_template('threshold.html')
 
+@app.route('/threshold-code')
+def threshold_code():
+    return render_template('threshold.html')
 #endpoint 9
 @app.route('/ILLUSION-VEIL')
 def illusion_veil():
     return render_template('illusion_veil.html')
 
+@app.route('/illusion-veil')
+def illusion_veil():
+    return render_template('illusion_veil.html')
+
+
 #endpoint 10
 @app.route('/OBLIVION-TRUTH')
+def oblivion_truth():
+    return render_template('ob_truth.html')
+
+@app.route('/oblivion-truth')
 def oblivion_truth():
     return render_template('ob_truth.html')
 
@@ -86,8 +120,16 @@ def oblivion_truth():
 @app.route('/NIGHTFALL-ECHO')
 def nightfall_echo():
     return render_template('night_echo.html')
+
+@app.route('/nightfall-echo')
+def nightfall_echo():
+    return render_template('night_echo.html')
 #endpoint 11
 @app.route('/fragment')
+def frag():
+    return render_template('frag.html')
+
+@app.route('/FRAGMENT')
 def frag():
     return render_template('frag.html')
 

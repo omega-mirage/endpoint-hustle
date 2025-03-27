@@ -3,21 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erasing the data fast</title>
+    <title>Erasing the Data Fast</title>
     <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        body {
+            background-color: #0d001a;
+            color: #e0b3ff;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .glitch-container {
+            position: relative;
+            margin-top: 100px;
+        }
+
+        .glitch {
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 0 0 5px #e0b3ff, 0 0 10px #c77dff;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px #ff00ff; }
+            50% { text-shadow: -2px -2px #00ffff; }
+            100% { text-shadow: 2px 2px #ff00ff; }
+        }
+
+        .subtext {
+            font-size: 1.2em;
+            color: #b380ff;
+        }
+
+        .popup {
+            background-color: rgba(50, 0, 50, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0px 0px 15px #c77dff;
+        }
+
+        button {
+            background-color: #800080;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #a64ca6;
+        }
+
+        .shape, .fragment {
+            position: absolute;
+            background-color: rgba(255, 0, 255, 0.8);
+            animation: float 5s infinite alternate ease-in-out, glitchShape 1s infinite;
+            opacity: 0.8;
+        }
+
+        .shape {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(255, 0, 255, 0.7);
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.9);
+        }
+
+        .fragment {
+            width: 40px;
+            height: 40px;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            background-color: rgba(0, 255, 255, 0.7);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-100px);
+            }
+        }
+
+        @keyframes glitchShape {
+            0% { transform: translateX(5px) rotate(5deg); }
+            50% { transform: translateX(-5px) rotate(-5deg); }
+            100% { transform: translateX(5px) rotate(5deg); }
+        }
+    </style>
 </head>
 <body>
     <div class="glitch-container">
-        <h1 class="glitch" data-text="From where it started">From where it started</h1>
-          <h3 class="glitch" data-text="The language barely understood by humans">The language barely understood by humans</h3>
+        <h1 class="glitch" data-text="From where it started">The Final Hustle Begins</h1>
+        <h3 class="glitch" data-text="The language barely understood by humans">You should neve be here again...</h3>
         <p class="subtext">System compromised. Erasing the data fast...</p>
     </div>
 
     <div class="popup" id="popup">
-        <p>WARNING: Files are being deleted! be fast</p>
+        <p>WARNING: Files are being deleted! Be fast</p>
         <button onclick="closePopup()">Dismiss</button>
     </div>
 
-    <script src="static/js/script.js"></script>
+    <script>
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+        
+        function createShapes() {
+            for (let i = 0; i < 15; i++) {
+                let shape = document.createElement("div");
+                shape.classList.add("shape");
+                document.body.appendChild(shape);
+                shape.style.left = Math.random() * window.innerWidth + "px";
+                shape.style.top = Math.random() * window.innerHeight + "px";
+                shape.style.animationDuration = (Math.random() * 3 + 3) + "s";
+            }
+            for (let i = 0; i < 10; i++) {
+                let fragment = document.createElement("div");
+                fragment.classList.add("fragment");
+                document.body.appendChild(fragment);
+                fragment.style.left = Math.random() * window.innerWidth + "px";
+                fragment.style.top = Math.random() * window.innerHeight + "px";
+                fragment.style.animationDuration = (Math.random() * 3 + 3) + "s";
+            }
+        }
+        
+        window.onload = createShapes;
+    </script>
 </body>
-</html> 
+</html>

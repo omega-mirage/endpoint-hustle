@@ -86,6 +86,11 @@ def oblivion_truth():
 @app.route('/NIGHTFALL-ECHO')
 def nightfall_echo():
     return render_template('night_echo.html')
+#endpoint 11
+@app.route('/fragment')
+def frag():
+    return render_template('frag.html')
+
 
 # Hidden endpoint 3 (requires a specific header)
 @app.route('/secret')
